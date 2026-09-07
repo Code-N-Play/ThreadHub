@@ -18,7 +18,8 @@ class AuthController {
     static async register(req, res) {
         var userdata = new usermodel({
             username:req.body.username,
-            email:req.body.email
+            email:req.body.email,
+            name:req.body.name
         });
 
         usermodel.register(userdata,req.body.password)

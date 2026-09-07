@@ -8,6 +8,15 @@ const userSchema = mongoose.Schema({
     username: {
         type: String
     },
+    name:{
+        type:String
+    },
+    profileImage:{
+        type:String
+    },
+    bio:{
+        type:String
+    },
     email: {
         type: String
     },

@@ -4,6 +4,7 @@ import usermodel from "../models/Users.js";
 import localStrategy from "passport-local";
 import passport from "passport";
 
+
 passport.use(new localStrategy(usermodel.authenticate()));
 
 const router = express.Router();
@@ -15,8 +16,9 @@ router.get("/", (req, res) => {
 });
 
 router.get("/login", AuthController.loginPage);
+
 router.post("/login",passport.authenticate("local",{
-  successRedirect: "/user/profile",
+  successRedirect: '/user/profile',
   failureRedirect: "/"
 }), AuthController.login);
 

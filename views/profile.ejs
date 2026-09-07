@@ -49,17 +49,14 @@ data-bs-theme="dark">
                             <span>Support</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span>Settings</span></a>
+                        <a class="nav-link" href="/user/edit">
+                            <span>Edit Profile</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">
                             <span>Logout</span></a>
                     </li>
                 </ul>
-            </div>
-            <div class="card-footer text-center py-2">
-                <a class="btn btn-link btn-sm" href="#">View Profile </a>
             </div>
         </div>
     </div>
@@ -68,21 +65,20 @@ data-bs-theme="dark">
             <div class="px-3 pt-4 pb-2">
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-center">
-                        <img style="width:150px" class="me-3 avatar-sm rounded-circle"
-                            src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt="Mario Avatar">
+                        <img style="width:150px; height: 150px; " class="me-3 avatar-sm rounded-circle"
+                            src="../images/uploads/<%= user.profileImage%>" alt="Mario Avatar">
                         <div>
-                            <h3 class="card-title mb-0"><a href="#"> Mario
+
+                            <h3 class="card-title mb-0"><a > <%= user.name %>
                                 </a></h3>
-                            <span class="fs-6 text-muted">@mario</span>
+                            <span class="fs-6 text-muted">@<%= user.username %></span>
                         </div>
                     </div>
                 </div>
                 <div class="px-2 mt-4">
-                    <h5 class="fs-5"> About : </h5>
+                    <h5 class="fs-5"> Bio : </h5>
                     <p class="fs-6 fw-light">
-                        This book is a treatise on the theory of ethics, very popular during the
-                        Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes
-                        from a line in section 1.10.32.
+                    <%= user.bio%>
                     </p>
                     <div class="d-flex justify-content-start">
                         <a href="#" class="fw-light nav-link fs-6 me-3"> <span class="fas fa-user me-1">
