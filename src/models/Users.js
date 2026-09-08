@@ -22,7 +22,25 @@ const userSchema = mongoose.Schema({
     },
     password: {
         type: String
-    }
+    },
+    threads: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Threads"
+        }
+    ],
+    followers: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Users"
+        }
+    ],
+    following: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Users"
+        }
+    ]
 });
 const plm = passportLocalMongoose.default || passportLocalMongoose;
 
